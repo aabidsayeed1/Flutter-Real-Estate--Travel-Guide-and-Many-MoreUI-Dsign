@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           accentColor: COLOR_DARK_BLUE,
           textTheme: screenWidth < 500 ? TEXT_THEME_SMALL : TEXT_THEME_DEFAULT,
           fontFamily: 'Montserrat'),
-      home: const LandingScreen(),
+      home: LandingScreen(),
     );
   }
 }
