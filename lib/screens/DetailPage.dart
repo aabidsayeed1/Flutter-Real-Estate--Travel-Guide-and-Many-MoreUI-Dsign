@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:homedesign/custom/BorderIcon.dart';
 import 'package:homedesign/custom/OptionButton.dart';
+import 'package:homedesign/screens/home-screen.dart';
 import 'package:homedesign/utils/constants.dart';
 import 'package:homedesign/utils/widget_functions.dart';
 
@@ -137,12 +138,17 @@ class DetailPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   OptionButton(
+                    onpress: () {},
                     text: "Message",
                     icon: Icons.message,
                     width: size.width * 0.35,
                   ),
                   addHorizontalSpace(10),
                   OptionButton(
+                    onpress: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                    },
                     text: 'Call',
                     icon: Icons.call,
                     width: size.width * 0.35,

@@ -4,11 +4,13 @@ import '../utils/constants.dart';
 import '../utils/widget_functions.dart';
 
 class OptionButton extends StatelessWidget {
+  dynamic onpress;
   final String? text;
   final IconData? icon;
   final double? width;
-  const OptionButton({
+  OptionButton({
     Key? key,
+    this.onpress,
     this.text,
     this.icon,
     this.width,
@@ -24,7 +26,7 @@ class OptionButton extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          onPressed: () {},
+          onPressed: onpress,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
