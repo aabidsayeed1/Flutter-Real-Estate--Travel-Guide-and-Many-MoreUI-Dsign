@@ -1,16 +1,2 @@
-# homedesign
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![simulator_screenshot_CA8D4A63-35C8-4A64-8CD0-6C0A714F8E26](https://user-images.githubusercontent.com/37657822/161124028-bcb194bd-5f86-42f8-b536-d8f3d9f3b0c3.png)
+![simulator_screenshot_FE21DC40-5375-4254-A668-D34C2D3305C7](https://user-images.githubusercontent.com/37657822/161124088-370067e5-741c-434e-8f1b-4b17c0151bf5.png)
