@@ -57,3 +57,10 @@ const BEAUTY_DATA = [
     'rating': 4.5,
   },
 ];
+const CATEGORY = [
+  {'image': 'assets/images/category/Ellipse 6.png', 'name': 'Mount'},
+  {'image': 'assets/images/category/Ellipse 7.png', 'name': 'Beach'},
+  {'image': 'assets/images/category/Ellipse 8.png', 'name': 'Crater'},
+  {'image': 'assets/images/category/Ellipse 9.png', 'name': 'Waterfall'},
+  {'image': 'assets/images/category/Ellipse 10.png', 'name': 'River'},
+];

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 import 'package:homedesign/custom/BorderIcon.dart';
 import 'package:homedesign/custom/OptionButton.dart';
+import 'package:homedesign/screens/detail-travel.dart';
 import 'package:homedesign/screens/home-screen.dart';
 import 'package:homedesign/utils/constants.dart';
 import 'package:homedesign/utils/widget_functions.dart';
 
 import '../utils/custom_functions.dart';
+import 'nearby-screen.dart';
 
 class DetailPage extends StatelessWidget {
   final dynamic itemData;
