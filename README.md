@@ -1,16 +1,6 @@
-# homedesign
 
-A new Flutter project.
+![simulator_screenshot_DB6268D4-17FD-478D-9173-2853BD313E68](https://user-images.githubusercontent.com/37657822/161910168-b2e855dd-6499-44c1-aabc-10b4b869f7c9.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![simulator_screenshot_606C0970-340F-4AE5-9271-7AD2A4226190](https://user-images.githubusercontent.com/37657822/161910198-a0292016-1b45-4c15-90ed-813c6530214a.png)
