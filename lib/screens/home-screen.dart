@@ -6,6 +6,7 @@ import 'package:homedesign/custom/BorderIcon.dart';
 import 'package:homedesign/sample_data.dart';
 import 'package:homedesign/screens/detail-travel.dart';
 import 'package:homedesign/screens/landing_screen.dart';
+import 'package:homedesign/screens/silverappbar.dart';
 import 'package:homedesign/utils/constants.dart';
 import 'package:homedesign/utils/widget_functions.dart';
 
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final screens = [
     Home(),
     NearBy(),
+    HideContainer(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -100,9 +102,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         addHorizontalSpace(40),
-                        Icon(
-                          Icons.message_rounded,
-                          color: Colors.white,
+                        Column(
+                          children: [
+                            addVerticalSpace(22),
+                            InkWell(
+                              onTap: () {
+                                // Navigator.of(context).push(MaterialPageRoute(
+                                //     builder: (context) => Practice()));
+                                setState(() {
+                                  indexs = 2;
+                                });
+                              },
+                              child: Icon(
+                                Icons.message_rounded,
+                                color: Colors.white,
+                              ),
+                            ),
+                            addVerticalSpace(2),
+                            Container(
+                              color: indexs == 2 ? Colors.white : Colors.black,
+                              height: 4,
+                              width: 14,
+                            ),
+                          ],
                         ),
                         addHorizontalSpace(40),
                         Icon(

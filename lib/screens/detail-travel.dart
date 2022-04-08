@@ -5,10 +5,17 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:homedesign/utils/widget_functions.dart';
 
-class DetailTravel extends StatelessWidget {
+class DetailTravel extends StatefulWidget {
   dynamic itemData;
   DetailTravel({Key? key, this.itemData}) : super(key: key);
 
+  @override
+  State<DetailTravel> createState() => _DetailTravelState();
+}
+
+class _DetailTravelState extends State<DetailTravel> {
+  final screens = [About(), Review(), Photo(), Videos()];
+  var index = 2;
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -27,7 +34,7 @@ class DetailTravel extends StatelessWidget {
                 width: double.infinity,
                 height: size.height * 0.52,
                 child: Image.asset(
-                  itemData['image'],
+                  widget.itemData['image'],
                   fit: BoxFit.cover,
                 ),
               ),
@@ -81,7 +88,7 @@ class DetailTravel extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    itemData['name'],
+                    widget.itemData['name'],
                     style: themeData.textTheme.headline2,
                   ),
                   Row(
@@ -91,14 +98,14 @@ class DetailTravel extends StatelessWidget {
                         size: 30,
                         color: Color(0xffEE684A),
                       ),
-                      Text(itemData['place']),
+                      Text(widget.itemData['place']),
                     ],
                   ),
                   addVerticalSpace(8),
                   Row(
                     children: [
                       Text(
-                        '  ${itemData['rating']}  ',
+                        '  ${widget.itemData['rating']}  ',
                         style: themeData.textTheme.headline5,
                       ),
                       star(),
@@ -109,39 +116,94 @@ class DetailTravel extends StatelessWidget {
                     ],
                   ),
                   addVerticalSpace(20),
-                  Row(
-                    children: ['About', 'Review', 'Photo', 'Video']
-                        .map((e) => Text("    $e      "))
-                        .toList(),
-                  ),
-                  addVerticalSpace(12),
-                  Container(
-                    margin: EdgeInsets.only(left: 12),
-                    width: 50,
-                    height: 2.5,
-                    color: Color(0xffEE684A),
-                  ),
+                  Row(children: [
+                    Column(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                index = 0;
+                              });
+                            },
+                            child: Text("About")),
+                        addVerticalSpace(12),
+                        Container(
+                          width: 50,
+                          height: 2.5,
+                          color: index == 0
+                              ? Color(0xffEE684A)
+                              : Colors.transparent,
+                        ),
+                      ],
+                    ),
+                    addHorizontalSpace(20),
+                    Column(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                index = 1;
+                              });
+                            },
+                            child: Text("Review")),
+                        addVerticalSpace(12),
+                        Container(
+                          width: 50,
+                          height: 2.5,
+                          color: index == 1
+                              ? Color(0xffEE684A)
+                              : Colors.transparent,
+                        ),
+                      ],
+                    ),
+                    addHorizontalSpace(20),
+                    Column(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                index = 2;
+                              });
+                            },
+                            child: Text("Photo")),
+                        addVerticalSpace(12),
+                        Container(
+                          width: 50,
+                          height: 2.5,
+                          color: index == 2
+                              ? Color(0xffEE684A)
+                              : Colors.transparent,
+                        ),
+                      ],
+                    ),
+                    addHorizontalSpace(20),
+                    Column(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                index = 3;
+                              });
+                            },
+                            child: Text("Video")),
+                        addVerticalSpace(12),
+                        Container(
+                          width: 50,
+                          height: 2.5,
+                          color: index == 3
+                              ? Color(0xffEE684A)
+                              : Colors.transparent,
+                        ),
+                      ],
+                    ),
+                    addHorizontalSpace(20),
+                  ]),
                   Divider(
                     thickness: 1.2,
                     height: 1,
                   ),
                   addVerticalSpace(25),
-                  Text(
-                    'Description',
-                    style: themeData.textTheme.headline4,
-                  ),
-                  addVerticalSpace(10),
-                  SizedBox(
-                    height: 130,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu amet tempor, in massa, habitasse habitasse fermentum, sed faucibus. Augue arcu, ac proin accumsan urna morbi diam nunc, tincidunt. Ac turpis amet vitae dui aliquam vitae nunc. Non enim, lorem duis maecenas odio Read More '),
-                        ],
-                      ),
-                    ),
-                  ),
+                  screens[index],
                   addVerticalSpace(8),
                   Container(
                     width: size.width * 0.90,
@@ -171,6 +233,130 @@ class DetailTravel extends StatelessWidget {
       Icons.star,
       size: 20,
       color: Color(0xffEE684A),
+    );
+  }
+}
+
+class About extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Description',
+          style: themeData.textTheme.headline4,
+        ),
+        addVerticalSpace(10),
+        Container(
+          color: Colors.green.withOpacity(0.1),
+          child: SizedBox(
+            height: 130,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu amet tempor, in massa, habitasse habitasse fermentum, sed faucibus. Augue arcu, ac proin accumsan urna morbi diam nunc, tincidunt. Ac turpis amet vitae dui aliquam vitae nunc. Non enim, lorem duis maecenas odio Read More '),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Review extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Review',
+          style: themeData.textTheme.headline4,
+        ),
+        addVerticalSpace(10),
+        Container(
+          color: Colors.yellow.withOpacity(0.1),
+          child: SizedBox(
+            height: 130,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu amet tempor, in massa, habitasse habitasse fermentum, sed faucibus. Augue arcu, ac proin accumsan urna morbi diam nunc, tincidunt. Ac turpis amet vitae dui aliquam vitae nunc. Non enim, lorem duis maecenas odio Read More '),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Photo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Photo',
+          style: themeData.textTheme.headline4,
+        ),
+        addVerticalSpace(10),
+        Container(
+          color: Colors.blue.withOpacity(0.1),
+          child: SizedBox(
+            height: 130,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu amet tempor, in massa, habitasse habitasse fermentum, sed faucibus. Augue arcu, ac proin accumsan urna morbi diam nunc, tincidunt. Ac turpis amet vitae dui aliquam vitae nunc. Non enim, lorem duis maecenas odio Read More '),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Videos extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Videos',
+          style: themeData.textTheme.headline4,
+        ),
+        addVerticalSpace(10),
+        Container(
+          color: Colors.pink.withOpacity(0.1),
+          child: SizedBox(
+            height: 130,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu amet tempor, in massa, habitasse habitasse fermentum, sed faucibus. Augue arcu, ac proin accumsan urna morbi diam nunc, tincidunt. Ac turpis amet vitae dui aliquam vitae nunc. Non enim, lorem duis maecenas odio Read More '),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
