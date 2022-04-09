@@ -56,6 +56,36 @@ const BEAUTY_DATA = [
     'name': 'PariMahal',
     'rating': 4.5,
   },
+  {
+    'image': "assets/images/nishat.png",
+    'place': 'bandipora kashmir',
+    'name': 'Nishat Garden',
+    'rating': 4.3,
+  },
+  {
+    'image': "assets/images/dal.png",
+    'place': 'srinagar kashmir',
+    'name': 'dal lake',
+    'rating': 4.8,
+  },
+  {
+    'image': "assets/images/naga.png",
+    'place': 'Aloosa Bandipora ',
+    'name': 'Nagamarg',
+    'rating': 4.4,
+  },
+  {
+    'image': "assets/images/gul.png",
+    'place': 'Gulmarg kashmir',
+    'name': 'Snowboarding',
+    'rating': 4.9,
+  },
+  {
+    'image': "assets/images/parimahal.png",
+    'place': 'Srinagar Kashmir',
+    'name': 'PariMahal',
+    'rating': 4.5,
+  },
 ];
 const CATEGORY = [
   {'image': 'assets/images/category/Ellipse 6.png', 'name': 'Mount'},
